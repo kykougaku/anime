@@ -2,7 +2,7 @@ import cv2
 from PIL import Image, ImageDraw
 
 def main():
-    timesteps = range(0, 30+2, 2)
+    timesteps = range(0, 26+2, 2)
     linewidth = 2
     gif_duration = 1000#ms
     color = (255, 0, 0)#RGB
