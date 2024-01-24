@@ -3,7 +3,7 @@ import json
 from PIL import Image, ImageDraw
 
 def main():
-    linewidth = 2
+    linewidth = 3
     gif_duration = 1000#ms
     color = [255,0,0]#RGB
     pixellist = read_json("input/data.json")
