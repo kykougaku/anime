@@ -4,7 +4,7 @@ import cv2
 def test():
     width = 2
     color = [255,0,0]#RGB
-    x=303
+    x=698
 
     img = main.read_image("input/graph.png")
     img = main.add_verticle_line(img, x, width, color)

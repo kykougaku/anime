@@ -6,21 +6,21 @@ def main():
     linewidth = 3
     gif_duration = 1000#ms
     color = [255,0,0]#RGB
-    pixellist = read_json("input/data.json")
+    pixellist, outputfilename = read_json("input/data.json")
     img = read_image("input/graph.png")
     imglist = make_imagelist(img, pixellist, 152, linewidth, color)
-    save_as_gif(gif_duration, "output/graph.gif", imglist)
+    save_as_gif(gif_duration, "output/"+outputfilename+".gif", imglist)
 
 def read_json(filename):
     with open(filename, "r") as f:
         data = json.load(f)
-    begin, step, end = data["begin"], data["step"], data["end"]
+    begin, step, end, outputfilename = data["begin"], data["step"], data["end"], data["output_filename"]
 
     assert begin < end
     assert type(begin) == type(end) == type(step) == int
 
     pixellist = range(begin, end+step, step)
-    return pixellist
+    return pixellist, outputfilename
 
 def read_image(filename):
     img = cv2.imread(filename=filename)
